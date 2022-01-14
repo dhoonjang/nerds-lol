@@ -1,7 +1,7 @@
 import { render } from 'react-dom';
 import { FC } from 'react';
-import HelloWorld from './HelloWorld';
+import Main from './Main';
 
-const App: FC = () => <HelloWorld />;
+const App: FC = () => <Main />;
 
 render(<App />, document.getElementById('app'));
