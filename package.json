@@ -15,11 +15,19 @@
     "*.{js,jsx,ts,tsx}": "yarn lint --fix"
   },
   "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "@chakra-ui/react": "^1.7.4",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "axios": "^0.24.0",
+    "framer-motion": "^5",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.8",
     "@babel/preset-env": "7.16.8",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
