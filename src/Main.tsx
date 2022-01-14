@@ -5,9 +5,10 @@ import {
   Stack,
   Text,
   Grid,
-  Badge,
   Link,
   Tag,
+  Badge,
+  Flex,
   HStack,
 } from '@chakra-ui/react';
 import { apiAgent } from 'api';
@@ -37,11 +38,17 @@ const Main: React.FC = () => {
           {people &&
             people.map((p) => (
               <Stack p="4" bg="white" boxShadow="lg" borderRadius="xl">
-                <HStack flexWrap="wrap">
-                  <Text fontWeight="bold" fontSize="lg">
-                    {p.name}
-                  </Text>
-                  <Tag>#{p.discordId.split('#').pop()}</Tag>
+                <Flex
+                  flexWrap="wrap"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <HStack spacing={1}>
+                    <Text fontWeight="bold" fontSize="lg">
+                      {p.name}
+                    </Text>
+                    <Tag>#{p.discordId.split('#').pop()}</Tag>
+                  </HStack>
                   <Link
                     href={`https://www.op.gg/summoner/userName=${p.lolName}`}
                     target="_blank"
@@ -49,7 +56,13 @@ const Main: React.FC = () => {
                   >
                     {p.lolName}
                   </Link>
-                </HStack>
+                </Flex>
+                <Text pt={2}>
+                  주포지션: <Badge fontSize="md">{p.position}</Badge>
+                </Text>
+                <Text>
+                  부포지션: <Badge fontSize="md">{p.subPosition}</Badge>
+                </Text>
               </Stack>
             ))}
         </Grid>
