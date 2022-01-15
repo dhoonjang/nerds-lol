@@ -43,7 +43,7 @@ module.exports = {
     new CopyWebpackPlugin({ patterns: [{ from: 'public' }] }),
   ],
   devServer: {
-    port: 8080,
+    port: 3000,
     historyApiFallback: true,
     hot: true,
   },
