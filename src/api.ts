@@ -2,7 +2,7 @@ import axios from 'axios';
 import { IPeopleRequest } from 'types';
 
 export const apiAgent = axios.create({
-  baseURL: 'http://localhost:8080/api',
+  baseURL: 'https://jerk-lol.herokuapp.com/api',
 });
 
 export const requestFunc = async (req: IPeopleRequest) => {
