@@ -10,8 +10,13 @@ import {
   Badge,
   Flex,
   HStack,
+  Image,
+  Center,
+  Button,
 } from '@chakra-ui/react';
+import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import { apiAgent } from 'api';
+import { emblemTierMap } from 'getImage';
 import useSWR from 'swr';
 
 export interface IPeople {
@@ -29,7 +34,7 @@ const Main: React.FC = () => {
   });
 
   return (
-    <Box bg="gray.50" minH="100vh">
+    <Box bg="gray.50" minH="100vh" pb={10}>
       <Container pt={10} size="lg" maxW={1200}>
         <Heading textAlign="center" mb={10}>
           찌질이들의 리그 오브 레전드 대회
@@ -63,6 +68,24 @@ const Main: React.FC = () => {
                 <Text>
                   부포지션: <Badge fontSize="md">{p.subPosition}</Badge>
                 </Text>
+                <Image src={emblemTierMap.get(p.tier)} />
+                <Flex justifyContent="space-around">
+                  <Button>
+                    <TriangleDownIcon />
+                  </Button>
+                  <Center
+                    width={10}
+                    fontSize="xl"
+                    color="gray.900"
+                    bg="honeydew"
+                    fontWeight="bold"
+                  >
+                    {4 - ((p.tier - 1) % 4)}
+                  </Center>
+                  <Button>
+                    <TriangleUpIcon />
+                  </Button>
+                </Flex>
               </Stack>
             ))}
         </Grid>
