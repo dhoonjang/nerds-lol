@@ -5,7 +5,7 @@ export const apiAgent = axios.create({
   baseURL: 'https://jerk-lol.herokuapp.com/api',
 });
 
-export const requestFunc = async (req: IPeopleRequest) => {
+export const requestApi = async (req: IPeopleRequest) => {
   const res = await apiAgent.post('/people', req);
   return res;
 };
